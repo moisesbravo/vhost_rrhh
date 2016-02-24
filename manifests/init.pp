@@ -4,7 +4,7 @@ class vhost_rrhh {
   $vhost_file ="puppet:///modules/vhost_rrhh/rrhh.conf"
 # Crea el fichero con el host virtual en el directorio sites-available
     file { "/etc/apache2/sites-available/$name.conf":
-        ensure => directory,
+        ensure => file,
         source => $vhost_file,
         notify => Service['apache2'],
 
